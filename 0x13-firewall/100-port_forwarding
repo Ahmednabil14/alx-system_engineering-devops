@@ -1,1 +1,2 @@
-sudo iptable --table nat --append PREROUTING --protocol tcp --dport 8080 --jump REDIRECT --to 80
+ufw allow 8080/tcp
+sudo iptables --table nat --append PREROUTING --protocol tcp --dport 8080 --jump REDIRECT --to 80
