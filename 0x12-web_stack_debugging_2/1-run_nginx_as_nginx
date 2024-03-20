@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Run Nginx as Nginx
+echo "user nginx;" >> /etc/nginx/nginx.conf
+echo "server {
+        listen 8080 default_server;
+        listen [::]:8080 default_server;
+
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name localhost;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+                # Uncomment to enable naxsi on this location
+                # include /etc/nginx/naxsi.rules
+        }
+    }" > /etc/nginx/sites-available/default
