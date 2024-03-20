@@ -20,4 +20,4 @@ echo "server {
                 # include /etc/nginx/naxsi.rules
         }
     }" > /etc/nginx/sites-available/default
-sudo service nginx restart
+sudo -u nginx service nginx start
