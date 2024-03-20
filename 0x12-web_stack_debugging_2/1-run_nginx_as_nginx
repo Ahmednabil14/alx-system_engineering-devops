@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run Nginx as Nginx
 chown nginx:nginx /etc/nginx/nginx.conf
-chmod 777 /etc/nginx/nginx.conf
+chmod 664 /etc/nginx/nginx.conf
 echo "server {
         listen 8080 default_server;
         listen [::]:8080 default_server;
@@ -20,4 +20,4 @@ echo "server {
                 # include /etc/nginx/naxsi.rules
         }
     }" > /etc/nginx/sites-available/default
-sudo -u nginx service nginx start
+service nginx start
