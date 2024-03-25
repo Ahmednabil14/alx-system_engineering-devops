@@ -6,9 +6,9 @@ from sys import argv
 
 if __name__ == "__main__":
     user = requests.get(
-        "https://jsonplaceholder.typicode.com/users/{}".format(argv[2]))
+        "https://jsonplaceholder.typicode.com/users/{}".format(argv[1]))
     todos = requests.get(
-        "https://jsonplaceholder.typicode.com/todos?userId={}".format(argv[2]))
+        "https://jsonplaceholder.typicode.com/todos?userId={}".format(argv[1]))
 
     user_data = user.json()
     todos_data = todos.json()
