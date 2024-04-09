@@ -4,6 +4,7 @@
 """
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None):
     """recursive"""
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
