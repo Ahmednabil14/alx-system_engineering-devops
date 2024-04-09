@@ -10,7 +10,8 @@ def count_words(subreddit, word_list, after=None, count_dict={}):
     if after is None:
         url = 'https://api.reddit.com/r/{}/hot'.format(subreddit)
     else:
-        url = 'https://api.reddit.com/r/{}/hot?after={}'.format(subreddit, after)
+        url = 'https://api.reddit.com/r/{}/hot?after={}'.format(
+            subreddit, after)
 
     response = requests.get(url, allow_redirects=False)
 
